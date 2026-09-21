@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>销货开单软件-高效智能的零售与批发进销存管理系统</title>
+    <meta name="description" content="销货开单软件是一款专为中小微企业设计的智能进销存管理工具。支持快速开单、库存预警、会员管理及财务报表，帮助商家轻松实现数字化经营。">
+    <meta name="keywords" content="销货开单软件, 进销存系统, 零售管理软件, 库存管理, 开单软件, 收银系统">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --primary-dark: #1e40af;
+            --secondary-color: #10b981;
+            --text-main: #1f2937;
+            --text-light: #6b7280;
+            --bg-body: #f3f4f6;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-body);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-card);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary-color);
+        }
+
+        .cta-button {
+            background-color: var(--primary-color);
+            color: white !important;
+            padding: 10px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: background-color 0.2s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #111827;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--text-light);
+            margin-bottom: 40px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            border: none;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 20px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            color: var(--text-light);
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            transition: transform 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 50px;
+            height: 50px;
+            background-color: #dbeafe;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .feature-card h3 {
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+        }
+
+        .feature-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* Workflow Section */
+        .workflow {
+            background-color: #fff;
+            padding: 80px 20px;
+        }
+
+        .workflow-container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .workflow-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background-color: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+
+        .step-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .workflow-image {
+            background-color: #f8fafc;
+            border-radius: var(--border-radius);
+            padding: 40px;
+            border: 1px solid #e2e8f0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .mockup-line {
+            height: 12px;
+            background-color: #e2e8f0;
+            border-radius: 6px;
+            width: 100%;
+        }
+
+        .mockup-line.short { width: 60%; }
+        .mockup-line.medium { width: 80%; }
+        .mockup-line.active { background-color: var(--primary-color); opacity: 0.3; }
+
+        .mockup-btn {
+            height: 36px;
+            background-color: var(--primary-color);
+            border-radius: 6px;
+            width: 120px;
+            margin-top: 10px;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            padding: 80px 20px;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .table-wrapper {
+            overflow-x: auto;
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 20px;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        th {
+            background-color: #f9fafb;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        .check-icon { color: var(--secondary-color); }
+        .cross-icon { color: #ef4444; }
+
+        /* FAQ Section */
+        .faq {
+            background-color: #fff;
+            padding: 80px 20px;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        details {
+            margin-bottom: 16px;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 16px;
+        }
+
+        summary {
+            font-weight: 600;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '+';
+            font-size: 1.5rem;
+            color: var(--primary-color);
+        }
+
+        details[open] summary::after {
+            content: '-';
+        }
+
+        details p {
+            margin-top: 12px;
+            color: var(--text-light);
+            padding-right: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #111827;
+            color: #d1d5db;
+            padding: 60px 20px 30px;
+        }
+
+        .footer-content {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #374151;
+            padding-top: 30px;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-menu { display: none; }
+            .hero h1 { font-size: 2rem; }
+            .workflow-container { grid-template-columns: 1fr; }
+            .step-item { flex-direction: column; gap: 10px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header>
+        <div class="nav-container">
+            <div class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                智销通
+            </div>
+            <nav class="nav-menu">
+                <a href="#features">功能特点</a>
+                <a href="#workflow">操作流程</a>
+                <a href="#comparison">方案对比</a>
+                <a href="#faq">常见问题</a>
+            </nav>
+            <a href="#" class="cta-button">免费试用</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>销货开单软件，让生意管理更简单</h1>
+            <p>专为实体店、批发商及零售连锁设计的一站式进销存解决方案。支持快速扫码开单、智能库存预警、会员积分管理，助您提升人效与营收。</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary">立即开始使用</button>
+                <button class="btn btn-outline">观看演示视频</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="section-header">
+            <h2>核心功能亮点</h2>
+            <p>全方位的业务支持，满足不同规模企业的管理需求</p>
+        </div>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="icon-box">⚡</div>
+                <h3>极速开单</h3>
+                <p>支持条码扫描、快捷键操作，快速录入商品信息，提升收银效率，减少顾客等待时间。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box">📊</div>
+                <h3>库存实时</h3>
+                <p>销货自动扣减库存，库存不足自动预警，多仓库管理，杜绝超卖现象，确保货源充足。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box">👥</div>
+                <h3>会员管理</h3>
+                <p>建立会员档案，支持储值、积分、折扣管理，精准营销，提升客户复购率与忠诚度。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box">💰</div>
+                <h3>财务报表</h3>
+                <p>自动生成每日/月销售报表、利润分析、库存周转率等数据，为经营决策提供数据支持。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box">📱</div>
+                <h3>移动办公</h3>
+                <p>支持手机APP与小程序，随时随地查看数据、处理订单，实现远程办公与移动管理。</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon-box">🔒</div>
+                <h3>数据安全</h3>
+                <p>采用云端加密存储，定期数据备份，保障企业核心数据资产的安全与隐私。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Workflow Section -->
+    <section id="workflow" class="workflow">
+        <div class="workflow-container">
+            <div class="workflow-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h4>商品入库</h4>
+                        <p>通过Excel批量导入或手动录入商品信息，设置条码、价格、分类及库存上限。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h4>顾客消费</h4>
+                        <p>顾客结账时，扫描商品条码或输入编码，系统自动计算金额，支持多种支付方式。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h4>数据沉淀</h4>
+                        <p>交易完成后，系统自动更新库存、会员积分及销售记录，生成财务报表。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="workflow-image">
+                <div class="mockup-line active"></div>
+                <div class="mockup-line active"></div>
+                <div class="mockup-line active"></div>
+                <div class="mockup-line short"></div>
+                <div class="mockup-btn"></div>
+                <div style="text-align: center; color: var(--text-light); font-size: 0.9rem; margin-top: 10px;">实时开单界面预览</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Section -->
+    <section id="comparison" class="comparison">
+        <div class="section-header">
+            <h2>为什么选择智能开单软件？</h2>
+            <p>传统手工记账与数字化管理的效率对比</p>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>功能对比</th>
+                        <th>传统手工/Excel</th>
+                        <th>专业销货开单软件</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>开单速度</td>
+                        <td>录入慢，容易出错，需查账</td>
+                        <td class="check-icon">扫码即开单，秒级响应</td>
+                    </tr>
+                    <tr>
+                        <td>库存管理</td>
+                        <td>需人工盘点，容易超卖</td>
+                        <td class="check-icon">实时同步，缺货自动预警</td>
+                    </tr>
+                    <tr>
+                        <td>会员管理</td>
+                        <td>无系统记录，难以维护</td>
+                        <td class="check-icon">会员画像清晰，精准营销</td>
+                    </tr>
+                    <tr>
+                        <td>数据分析</td>
+                        <td>数据杂乱，难以生成报表</td>
+                        <td class="check-icon">自动生成可视化报表</td>
+                    </tr>
+                    <tr>
+                        <td>成本投入</td>
+                        <td>低，但长期人力成本高</td>
+                        <td class="check-icon">一次性投入，长期节省人力</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="section-header">
+            <h2>常见问题解答</h2>
+        </div>
+        <div class="faq-container">
+            <details>
+                <summary>软件支持哪些设备使用？</summary>
+                <p>本软件支持Windows电脑端、安卓手机/平板、苹果iPad以及微信小程序。您可以根据实际需求选择合适的终端设备进行开单和管理。</p>
+            </details>
+            <details>
+                <summary>数据安全如何保障？</summary>
+                <p>我们采用企业级云端加密技术存储数据，并设有每日自动备份机制。即使设备丢失，您的业务数据依然安全可用。</p>
+            </details>
+            <details>
+                <summary>是否支持批量导入商品？</summary>
+                <p>支持。系统提供Excel模板，您可以将大量商品信息一次性导入，大幅减少初始化设置的时间。</p>
+            </details>
+            <details>
+                <summary>新店开业需要多久能上手？</summary>
+                <p>操作界面简洁直观，新用户通常在30分钟内即可完成基础商品录入并开始开单业务。</p>
+            </details>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p>智销通致力于为中小企业提供最便捷、最高效的数字化管理工具，帮助商家轻松实现数字化转型。</p>
+            </div>
+            <div class="footer-col">
+                <h4>产品功能</h4>
+                <ul>
+                    <li><a href="#">销售开单</a></li>
+                    <li><a href="#">库存管理</a></li>
+                    <li><a href="#">会员营销</a></li>
+                    <li><a href="#">财务报表</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>支持服务</h4>
+                <ul>
+                    <li><a href="#">帮助中心</a></li>
+                    <li><a href="#">在线客服</a></li>
+                    <li><a href="#">联系客服</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li>电话：400-123-4567</li>
+                    <li>邮箱：support@zhixiaotong.com</li>
+                    <li>地址：科技园区创新大道88号</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 智销通科技 版权所有</p>
+        </div>
+    </footer>
+
+</body>
+</html>

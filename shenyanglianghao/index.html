@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="沈阳靓号网提供专业沈阳手机号码、座机号码、吉祥号码资源查询与选购服务，涵盖联通、移动、电信三大运营商号码，助您轻松找到心仪的幸运号码。">
+    <meta name="keywords" content="沈阳靓号网,沈阳手机号,沈阳座机号,联通靓号,移动靓号,电信靓号,吉祥号码,顺子号,豹子号">
+    <title>沈阳靓号网-专业沈阳手机号与座机号资源选购平台</title>
+    <style>
+        :root {
+            --primary-color: #0066cc;
+            --primary-dark: #004c99;
+            --accent-color: #ff6b00;
+            --bg-light: #f5f7fa;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --white: #ffffff;
+            --border-color: #e1e4e8;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.1);
+            --radius: 8px;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            line-height: 1.6;
+            color: var(--text-main);
+            background-color: var(--bg-light);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* Layout Utilities */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+            font-size: 16px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-link {
+            font-weight: 500;
+            color: var(--text-main);
+            font-size: 16px;
+        }
+
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: var(--radius);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: var(--white);
+        }
+
+        .btn-primary:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0066cc 0%, #004c99 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .search-box {
+            background: var(--white);
+            padding: 10px;
+            border-radius: 50px;
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        }
+
+        .search-input {
+            flex: 1;
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 50px 0 0 50px;
+        }
+
+        .search-btn {
+            background: var(--accent-color);
+            color: var(--white);
+            border: none;
+            padding: 0 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .search-btn:hover {
+            background: #e65c00;
+        }
+
+        /* Stats */
+        .stats-bar {
+            background: var(--white);
+            margin-top: -30px;
+            position: relative;
+            z-index: 10;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            justify-content: space-around;
+            padding: 30px;
+            margin-bottom: 60px;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* Operator Filter */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .filter-chip {
+            padding: 8px 20px;
+            border-radius: 20px;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            color: var(--text-secondary);
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .filter-chip:hover, .filter-chip.active {
+            background: var(--primary-color);
+            color: var(--white);
+            border-color: var(--primary-color);
+        }
+
+        /* Number Grid */
+        .number-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
+        }
+
+        .number-card {
+            background: var(--white);
+            border-radius: var(--radius);
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .number-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-color);
+        }
+
+        .card-tag {
+            position: absolute;
+            top: 0;
+            right: 0;
+            background: var(--accent-color);
+            color: var(--white);
+            font-size: 12px;
+            padding: 4px 10px;
+            border-bottom-left-radius: 8px;
+        }
+
+        .card-type {
+            font-size: 12px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+            display: block;
+        }
+
+        .card-number {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--text-main);
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .card-price {
+            font-size: 18px;
+            color: var(--primary-color);
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .card-price small {
+            font-size: 12px;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .card-features {
+            margin-top: 12px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .feature-tag {
+            font-size: 11px;
+            background: #eef4fc;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background-color: var(--white);
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .guide-item {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius);
+            transition: border-color 0.2s;
+        }
+
+        .guide-item:hover {
+            border-color: var(--primary-color);
+        }
+
+        .guide-icon {
+            width: 50px;
+            height: 50px;
+            background: #eef4fc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary-color);
+            flex-shrink: 0;
+        }
+
+        .guide-content h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .guide-content p {
+            color: var(--text-secondary);
+            font-size: 14px;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background-color: var(--bg-light);
+        }
+
+        .faq-grid {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--white);
+            border-radius: var(--radius);
+            margin-bottom: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 24px;
+            color: var(--primary-color);
+            transition: transform 0.2s;
+        }
+
+        .faq-item.active .faq-question::after {
+            transform: rotate(45deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            padding: 0 20px;
+        }
+
+        .faq-item.active .faq-answer {
+            padding-bottom: 20px;
+            max-height: 200px;
+        }
+
+        .faq-answer p {
+            color: var(--text-secondary);
+            font-size: 15px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #ecf0f1;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: var(--white);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            font-size: 13px;
+            color: #95a5a6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            .nav-menu {
+                gap: 15px;
+                font-size: 14px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .stats-bar {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .filter-bar {
+                justify-content: flex-start;
+                overflow-x: auto;
+                padding-bottom: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                <path d="M16 2h4"></path>
+                <path d="M16 6h4"></path>
+                <path d="M16 10h4"></path>
+            </svg>
+            <span>沈阳靓号网</span>
+        </a>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link active">首页</a></li>
+                <li><a href="#" class="nav-link">手机号码</a></li>
+                <li><a href="#" class="nav-link">座机号码</a></li>
+                <li><a href="#" class="nav-link">选购指南</a></li>
+                <li><a href="#" class="nav-link">联系我们</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-outline">登录</a>
+            <a href="#" class="btn btn-primary">立即咨询</a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>甄选沈阳优选号码</h1>
+            <p>汇聚联通、移动、电信最新资源，为您找到最具价值、最符合运势的吉祥号码。</p>
+            <div class="search-box">
+                <input type="text" class="search-input" placeholder="输入心仪号码（如 138****）">
+                <button class="search-btn">查询</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stat-item">
+                <span class="stat-num">10万+</span>
+                <span class="stat-label">号码资源</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">3大运营商</span>
+                <span class="stat-label">官方授权</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">24h</span>
+                <span class="stat-label">在线客服</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-num">100%</span>
+                <span class="stat-label">安全保障</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Number List Section -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">沈阳热门推荐</h2>
+                <p class="section-desc">为您精选当前市场流通量少、寓意美好的吉祥号码</p>
+            </div>
+
+            <div class="filter-bar">
+                <button class="filter-chip active">全部</button>
+                <button class="filter-chip">顺子号</button>
+                <button class="filter-chip">豹子号</button>
+                <button class="filter-chip">连号</button>
+                <button class="filter-chip">生日号</button>
+                <button class="filter-chip">VIP尊享</button>
+            </div>
+
+            <div class="number-grid">
+                <!-- Card 1 -->
+                <article class="number-card">
+                    <span class="card-tag">热门</span>
+                    <span class="card-type">移动 | 老号段</span>
+                    <div class="card-number">138 0000 8888</div>
+                    <div class="card-price">
+                        99,800 <small>元</small>
+                        <a href="#" class="btn btn-primary" style="padding: 4px 12px; font-size: 12px;">联系</a>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">豹子号</span>
+                        <span class="feature-tag">绝版</span>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="number-card">
+                    <span class="card-type">联通 | 5G</span>
+                    <div class="card-number">132 4567 1234</div>
+                    <div class="card-price">
+                        3,800 <small>元</small>
+                        <a href="#" class="btn btn-primary" style="padding: 4px 12px; font-size: 12px;">联系</a>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">顺子号</span>
+                        <span class="feature-tag">5G极速</span>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="number-card">
+                    <span class="card-type">电信 | 4G</span>
+                    <div class="card-number">189 8888 6666</div>
+                    <div class="card-price">
+                        88,000 <small>元</small>
+                        <a href="#" class="btn btn-primary" style="padding: 4px 12px; font-size: 12px;">联系</a>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">豹子号</span>
+                        <span class="feature-tag">财气</span>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="number-card">
+                    <span class="card-type">移动 | VIP</span>
+                    <div class="card-number">159 1234 5678</div>
+                    <div class="card-price">
+                        6,600 <small>元</small>
+                        <a href="#" class="btn btn-primary" style="padding: 4px 12px; font-size: 12px;">联系</a>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">连号</span>
+                        <span class="feature-tag">VIP特权</span>
+                    </div>
+                </article>
+
+                 <!-- Card 5 -->
+                 <article class="number-card">
+                    <span class="card-type">联通 | 老号段</span>
+                    <div class="card-number">156 9876 5432</div>
+                    <div class="card-price">
+                        5,200 <small>元</small>
+                        <a href="#" class="btn btn-primary" style="padding: 4px 12px; font-size: 12px;">联系</a>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">倒序号</span>
+                        <span class="feature-tag">稀缺</span>
+                    </div>
+                </article>
+
+                 <!-- Card 6 -->
+                 <article class="number-card">
+                    <span class="card-type">电信 | 新号段</span>
+                    <div class="card-number">177 1111 2222</div>
+                    <div class="card-price">
+                    12,000 <small>元</small>
+                        <a href="#" class="btn btn-primary" style="padding: 4px 12px; font-size: 12px;">联系</a>
+                    </div>
+                    <div class="card-features">
+                        <span class="feature-tag">生日号</span>
+                        <span class="feature-tag">新号段</span>
+                    </div>
+                </article>
+            </div>
+            
+            <div style="text-align: center; margin-top: 40px;">
+                <a href="#" class="btn btn-outline">查看更多号码</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guide Section -->
+    <section class="section guide-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">选购指南</h2>
+                <p class="section-desc">了解如何根据行业属性和自身需求挑选最适合的号码</p>
+            </div>
+            <div class="guide-grid">
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                    </div>
+                    <div class="guide-content">
+                        <h3>个人用户：注重寓意与顺口</h3>
+                        <p>选择与自己生日、纪念日相关的数字，或选择读起来朗朗上口的顺子号、对子号，增加日常使用的愉悦感。</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                    </div>
+                    <div class="guide-content">
+                        <h3>商务用户：讲究气场与易记</h3>
+                        <p>推荐使用带有8、6等吉祥数字的号码，或选择简单易记的短号、连号，有助于客户记忆，提升品牌形象。</p>
+                    </div>
+                </div>
+                <div class="guide-item">
+                    <div class="guide-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <div class="guide-content">
+                        <h3>安全提示：谨防诈骗</h3>
+                        <p>购买号码时请认准正规运营商渠道或授权代理商，切勿向不明账户转账，确保号码实名制办理安全合规。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">常见问题</h2>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item active">
+                    <div class="faq-question">购买号码后如何过户？</div>
+                    <div class="faq-answer">
+                        <p>购买成功后，您可以选择邮寄方式将卡寄回，或由我们协助您在运营商营业厅办理过户手续。过户通常需要双方携带身份证件到场办理。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">靓号是否有最低消费要求？</div>
+                    <div class="faq-answer">
+                        <p>部分高价值或特殊号段（如豹子号、连号）属于集团用户资源，办理时可能需要签署协议并承诺一定的月租或最低消费标准。</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何查询号码是否可用？</div>
+                    <div class="faq-answer">
+                        <p>您可以直接在网站首页的搜索框输入手机号或前几位数字进行查询，或者联系在线客服，客服会为您实时查询号码库存状态。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="color: #bdc3c7; font-size: 14px; line-height: 1.8;">
+                    沈阳靓号网是东北地区专业的手机号码资源服务平台，致力于为个人和企业客户提供安全、便捷的号码选购服务。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>号码分类</h4>
+                <ul>
+                    <li><a href="#">移动老号段</a></li>
+                    <li><a href="#">联通5G优选</a></li>
+                    <li><a href="#">电信VIP资源</a></li>
+                    <li><a href="#">沈阳座机号码</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>服务支持</h4>
+                <ul>
+                    <li><a href="#">号码过户流程</a></li>
+                    <li><a href="#">套餐资费说明</a></li>
+                    <li><a href="#">售后保障政策</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系方式</h4>
+                <ul>
+                    <li><a href="#">客服热线：024-8888 8888</a></li>
+                    <li><a href="#">工作时间：9:00 - 18:00</a></li>
+                    <li><a href="#">地址：辽宁省沈阳市和平区</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2023 沈阳靓号网 版权所有 | 辽ICP备XXXXXXXX号</p>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+
+<script>
+    // Simple FAQ Accordion Logic
+    document.querySelectorAll('.faq-question').forEach(item => {
+        item.addEventListener('click', event => {
+            const parent = item.parentElement;
+            const isActive = parent.classList.contains('active');
+            
+            // Close all others
+            document.querySelectorAll('.faq-item').forEach(child => {
+                child.classList.remove('active');
+            });
+
+            // Toggle current
+            if (!isActive) {
+                parent.classList.add('active');
+            }
+        });
+    });
+
+    // Filter Chip Logic
+    document.querySelectorAll('.filter-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+            document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+            chip.classList.add('active');
+            // In a real app, this would filter the grid items
+        });
+    });
+</script>
+
+</body>
+  </html>
